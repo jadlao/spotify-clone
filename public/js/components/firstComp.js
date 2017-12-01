@@ -86,7 +86,11 @@ var Navigation = function (_React$Component) {
             return _react2.default.createElement(
                 "nav",
                 null,
-                _react2.default.createElement("div", { className: "navbar-brand" }),
+                _react2.default.createElement(
+                    "div",
+                    { className: "navbar-brand" },
+                    _react2.default.createElement("img", { src: "../img/logo-spotify.png" })
+                ),
                 _react2.default.createElement(
                     "div",
                     { className: "nav-menu" },
@@ -163,7 +167,7 @@ exports.default = Navigation;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -181,22 +185,67 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var New = function (_React$Component) {
-    _inherits(New, _React$Component);
+  _inherits(New, _React$Component);
 
-    function New() {
-        _classCallCheck(this, New);
+  function New() {
+    _classCallCheck(this, New);
 
-        return _possibleConstructorReturn(this, (New.__proto__ || Object.getPrototypeOf(New)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (New.__proto__ || Object.getPrototypeOf(New)).apply(this, arguments));
+  }
+
+  _createClass(New, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "section",
+        { className: "new" },
+        _react2.default.createElement(
+          "main",
+          null,
+          _react2.default.createElement(
+            "h1",
+            null,
+            "What's on ",
+            _react2.default.createElement("br", null),
+            "Spotify?"
+          ),
+          _react2.default.createElement(
+            "h3",
+            null,
+            "Music"
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "There are millions of songs on Spotify. Play your favorites, discover new tracks, and build the perfect collection."
+          ),
+          _react2.default.createElement(
+            "h3",
+            null,
+            "Playlists"
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "You\u2019ll find readymade playlists to match your mood, put together by music fans and experts."
+          ),
+          _react2.default.createElement(
+            "h3",
+            null,
+            "New Releases"
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "Hear this week\u2019s latest singles and albums, and check out what\u2019s hot in the Top 50."
+          )
+        ),
+        _react2.default.createElement("aside", null)
+      );
     }
+  }]);
 
-    _createClass(New, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement("section", { className: "new" });
-        }
-    }]);
-
-    return New;
+  return New;
 }(_react2.default.Component);
 
 exports.default = New;
@@ -378,7 +427,50 @@ var Features = function (_React$Component) {
     _createClass(Features, [{
         key: "render",
         value: function render() {
-            return _react2.default.createElement("section", { className: "features" });
+            return _react2.default.createElement(
+                "section",
+                { className: "features" },
+                _react2.default.createElement("aside", null),
+                _react2.default.createElement(
+                    "main",
+                    null,
+                    _react2.default.createElement(
+                        "h1",
+                        null,
+                        "It's easy."
+                    ),
+                    _react2.default.createElement(
+                        "h3",
+                        null,
+                        "Search"
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "Know what you want to listen to? Just search and hit play."
+                    ),
+                    _react2.default.createElement(
+                        "h3",
+                        null,
+                        "Browse"
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "Check out the latest charts, brand new releases and great playlists for right now."
+                    ),
+                    _react2.default.createElement(
+                        "h3",
+                        null,
+                        "Discover"
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "Enjoy new music every Monday with your own personal playlist. Or sit back and enjoy Radio."
+                    )
+                )
+            );
         }
     }]);
 

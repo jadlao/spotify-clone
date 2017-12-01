@@ -5,6 +5,7 @@ export default class Navigation extends React.Component {
         return (
             <nav>
                 <div className="navbar-brand">
+                  <img src="../img/logo-spotify.png" />
                 </div>
                 <div className="nav-menu">
                     <ul>
