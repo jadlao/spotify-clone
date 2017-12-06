@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react'
 
-export default class Hero extends React.Component {
-    render() {
-        return (
-            <section className="hero">
+export default class Hero extends Component {
+  render() {
+    return (
+      <section className="hero">
+      
 
             </section>
-        )
-    }
+    )
+  }
 }

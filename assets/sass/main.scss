@@ -1,121 +1,33 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 @import "reset";
 @import "variables";
 @import "mixins";
+@import "header";
+@import "content";
+@import "footer";
+
+body,
+html {
+  font-family: $fontMain;
+}
 
 h1 {
-  font-size: 3em;
-  line-height: 1.2em;
+  font-size: 3rem;
+  line-height: 3.5rem;
   font-weight: 600;
 }
 
+h2 {
+  font-size: 1.8rem;
+}
+
 h3 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   line-height: 2em;
   font-weight: 600;
 }
 
 p {
-  line-height: 1.5em;
-}
-
-body {
-    font-family: $fontMain;
-}
-
-// Navigation
-nav {
-    background: #333;
-    opacity: 0.7;
-    width: 100%;
-    height: 80px;
-    position: fixed;
-
-    .navbar-brand img {
-      position: absolute;
-      height: 40px;
-      left: 5%;
-      top: 20%;
-    }
-    ul {
-        float: right;
-        margin-right: 15px;
-        li {
-            list-style: none;
-            display: inline-block;
-            padding: 20px 20px;
-            color: #fff;
-            margin: 12px 0px;
-            a {
-                text-decoration: none;
-                color: $whiteFont;
-                &:hover {
-                    color: #1db954;
-                }
-            }
-        }
-    }
-}
-
-.hero {
-    background: red;
-    width: 100%;
-    height: 660px;
-}
-
-// What's on Spotify section
-.new {
-    background: #fff;
-    width: 100%;
-    height: 651px;
-
-    main {
-      width: 40%;
-      padding: 50px;
-      line-height: 2em;
-
-      h3 {
-        margin-top: 20px;
-      }
-    }
-
-    aside {
-      float: right;
-      width: 60%;
-    }
-}
-
-.features {
-    background: purple;
-    width: 100%;
-    height: 621px;
-
-    aside {
-      width: 50%;
-    }
-
-    main {
-      width: 40%;
-      float: right;
-      padding: 50px;
-      color: $whiteFont;
-    }
-}
-
-.media {
-    background: #fff;
-    width: 100%;
-    height: 512px;
-}
-
-.pricing {
-    background: yellow;
-    width: 100%;
-    height: 743px;
-}
-
-footer {
-    background: black;
-    width: 100%;
-    height: 496px;
+  line-height: 1.8rem;
+  font-weight: 500;
 }

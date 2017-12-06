@@ -1,0 +1,165 @@
+.hero {
+  background: #fd5c63;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #faca17, #fd5c63);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #faca17, #fd5c63);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 100%;
+  height: 660px;
+}
+// What's on Spotify section
+
+.new {
+  background: $white;
+  width: 100%;
+  height: 651px;
+  position: relative;
+
+  main {
+    box-sizing: border-box;
+    width: 40%;
+    padding: 50px;
+    line-height: 2em;
+    float: left;
+
+    h3 {
+      margin-top: 20px;
+    }
+  }
+
+  aside {
+    float: right;
+    width: 60%;
+
+    .box {
+      position: absolute;
+      top: 100px;
+      right: 10%;
+      height: 450px;
+      width: 450px;
+
+      .cover-wrapper-1 {
+        display: block;
+        float: left;
+
+        .music-cover {
+          background-size: cover;
+          background: red;
+          width: 225px;
+          height: 225px;
+        }
+      }
+
+      .cover-wrapper-2 {
+        display: block;
+        float: right;
+
+        .music-cover {
+          background-size: cover;
+          background: green;
+          width: 225px;
+          height: 225px;
+        }
+      }
+    }
+  }
+}
+
+.features {
+  background: #fd5c63;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #faca17, #fd5c63);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #faca17, #fd5c63);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 100%;
+  height: 621px;
+
+  aside {
+    width: 50%;
+    float: left;
+  }
+
+  main {
+    width: 40%;
+    float: right;
+    padding: 50px;
+    color: $white;
+
+    h3 {
+      margin-top: 20px;
+    }
+
+    p {
+      width: 370px;
+    }
+  }
+}
+
+.media {
+  background: $white;
+  width: 100%;
+  height: 512px;
+
+  h4 {
+    text-transform: uppercase;
+
+    &:nth-child(3) {
+      color: $green;
+    }
+  }
+}
+
+.pricing {
+  background: #fd5c63;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #faca17, #fd5c63);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #faca17, #fd5c63);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 100%;
+  height: 743px;
+  box-sizing: border-box;
+
+  h1 {
+    text-align: center;
+    padding-top: 50px;
+    color: $white;
+  }
+
+  .card-wrapper {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+
+    .card {
+      display: inline-block;
+      background: $white;
+      border-radius: 5px;
+      box-sizing: border-box;
+      padding: 20px;
+      width: 40%;
+      margin-left: 50px;
+      margin-top: 50px;
+      height: 480px;
+
+      button {
+        text-transform: uppercase;
+        border-radius: 999px;
+        background: $green;
+        color: $white;
+        text-align: center;
+        padding: 20px 50px;
+        font-size: 0.9em;
+        font-weight: 600;
+      }
+    }
+  }
+
+  p {
+    text-align: center;
+    margin-top: 20px;
+    color: $white;
+  }
+}
