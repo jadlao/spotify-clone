@@ -26,14 +26,18 @@ export default class New extends Component {
         </main>
         <aside>
           <div className="box">
-            <div className="cover-wrapper-1">
-              <div className="music-cover"></div>
-              <div className="music-cover"></div>
-            </div>
-            <div className="cover-wrapper-2">
-              <div className="music-cover"></div>
-              <div className="music-cover"></div>
-            </div>
+              <div className="music-cover">
+                <img src="./img/cover1.jpeg" />
+              </div>
+              <div className="music-cover">
+                <img src="./img/cover2.jpeg" />
+              </div>
+              <div className="music-cover">
+                <img src="./img/cover3.jpeg" />
+              </div>
+              <div className="music-cover">
+                <img src="./img/cover4.jpeg" />
+              </div>
           </div>
         </aside>
       </section>

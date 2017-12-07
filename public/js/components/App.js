@@ -97,17 +97,21 @@ var Media = function (_Component) {
             "everywhere."
           ),
           _react2.default.createElement(
-            "h4",
+            "h5",
             null,
             "mobile * computer * tablet * car"
           ),
           _react2.default.createElement(
-            "h4",
+            "h5",
             null,
             "speaker * playstation * xbox * tv * web player"
           )
         ),
-        _react2.default.createElement("aside", null)
+        _react2.default.createElement(
+          "aside",
+          null,
+          _react2.default.createElement("img", { src: "./img/devices.svg" })
+        )
       );
     }
   }]);
@@ -207,15 +211,23 @@ var New = function (_Component) {
             { className: "box" },
             _react2.default.createElement(
               "div",
-              { className: "cover-wrapper-1" },
-              _react2.default.createElement("div", { className: "music-cover" }),
-              _react2.default.createElement("div", { className: "music-cover" })
+              { className: "music-cover" },
+              _react2.default.createElement("img", { src: "./img/cover1.jpeg" })
             ),
             _react2.default.createElement(
               "div",
-              { className: "cover-wrapper-2" },
-              _react2.default.createElement("div", { className: "music-cover" }),
-              _react2.default.createElement("div", { className: "music-cover" })
+              { className: "music-cover" },
+              _react2.default.createElement("img", { src: "./img/cover2.jpeg" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "music-cover" },
+              _react2.default.createElement("img", { src: "./img/cover3.jpeg" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "music-cover" },
+              _react2.default.createElement("img", { src: "./img/cover4.jpeg" })
             )
           )
         )
@@ -288,7 +300,16 @@ var Pricing = function (_Component) {
             _react2.default.createElement(
               "h2",
               null,
-              "$0 / month"
+              _react2.default.createElement(
+                "span",
+                null,
+                "$0.00"
+              ),
+              _react2.default.createElement(
+                "span",
+                null,
+                " / month"
+              )
             ),
             _react2.default.createElement(
               "ul",
@@ -300,27 +321,27 @@ var Pricing = function (_Component) {
               ),
               _react2.default.createElement(
                 "li",
-                null,
+                { className: "inactive" },
                 "Ad free"
               ),
               _react2.default.createElement(
                 "li",
-                null,
+                { className: "inactive" },
                 "Unlimited skips"
               ),
               _react2.default.createElement(
                 "li",
-                null,
+                { className: "inactive" },
                 "Listen offline"
               ),
               _react2.default.createElement(
                 "li",
-                null,
+                { className: "inactive" },
                 "Play any track"
               ),
               _react2.default.createElement(
                 "li",
-                null,
+                { className: "inactive" },
                 "High quality audio"
               )
             ),
@@ -341,7 +362,16 @@ var Pricing = function (_Component) {
             _react2.default.createElement(
               "h2",
               null,
-              "$0.99 / 3 months"
+              _react2.default.createElement(
+                "span",
+                null,
+                "$0.99"
+              ),
+              _react2.default.createElement(
+                "span",
+                null,
+                " / 3 months"
+              )
             ),
             _react2.default.createElement(
               "ul",

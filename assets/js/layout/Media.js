@@ -8,10 +8,12 @@ export default class Media extends Component {
           <h1>
             One account. Listen <br />everywhere.
           </h1>
-          <h4>mobile * computer * tablet * car</h4>
-          <h4>speaker * playstation * xbox * tv * web player</h4>
+          <h5>mobile * computer * tablet * car</h5>
+          <h5>speaker * playstation * xbox * tv * web player</h5>
         </main>
-        <aside />
+        <aside>
+          <img src="./img/devices.svg" />
+        </aside>
       </section>
     );
   }
