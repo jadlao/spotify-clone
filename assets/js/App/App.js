@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import Header from '../../js/layout/Header';
 import Hero from '../../js/layout/Hero';
 import New from '../../js/layout/New';

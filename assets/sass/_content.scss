@@ -7,6 +7,76 @@
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   width: 100%;
   height: 660px;
+  color: $white;
+  position: relative;
+
+  .wrapper {
+    .prev {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      left: 10px;
+      top: 300px;
+
+      &:before {
+        font-family: 'FontAwesome';
+        content: '\f104';
+        font-size: 5rem;
+        float: right;
+        cursor: pointer;
+      }
+
+      &:hover {
+        opacity: 0.8;
+        color: $white;
+      }
+    }
+
+    .next {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      right: 10px;
+      top: 300px;
+
+      &:before {
+        font-family: 'FontAwesome';
+        content: '\f105';
+        font-size: 5rem;
+        cursor: pointer;
+      }
+
+      &:hover {
+        opacity: 0.8;
+        color: $white;
+      }
+    }
+
+    .carousel {
+      margin: 0 100px;
+
+      .carousel-item {
+        padding: 200px 0;
+        text-align: center;
+        display: none;
+
+        &.active {
+          display: block;
+        }
+
+        h1 {
+          font-size: 5rem;
+          line-height: 1.1;
+        }
+
+        button {
+          margin-top: 50px;
+          width: 200px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
 }
 // What's on Spotify section
 
@@ -70,10 +140,106 @@
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   width: 100%;
   height: 621px;
+  position: relative;
 
   aside {
     width: 50%;
     float: left;
+    color: $white;
+
+    .music-player {
+      border: 3px solid $white;
+      border-bottom: 0;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      position: absolute;
+      bottom: 0;
+      left: 115px;
+      height: 550px;
+      width: 330px;
+      background: rgba(255,255,255, 0.2);
+
+      .small-circle {
+        border: 2px solid $white;
+        border-radius: 50%;
+        height: 7px;
+        width: 7px;
+        display: block;
+        margin: 30px auto 0;
+      }
+
+      h4 {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 1.2rem;
+      }
+
+      .music-images {
+        margin: 20px 0 50px 45px;
+
+        figure {
+          width: 120px;
+          display: inline-block;
+          margin: 0 auto;
+
+          img {
+            height: 115px;
+            display: inline-block;
+            margin-bottom: 10px;
+          }
+
+          figcaption {
+            text-align: center;
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      ul {
+        margin-left: 45px;
+
+        li {
+          margin-top: 20px;
+
+          &:before {
+            font-family: 'FontAwesome';
+            margin-right: 10px;
+          }
+
+          &:first-child:before {
+            content: '\f201';
+          }
+
+          &:nth-child(2):before {
+            content: '\f073';
+          }
+
+          &:nth-child(3):before {
+            content: '\f03d';
+          }
+
+          &:nth-child(4):before {
+            content: '\f2ce';
+          }
+
+          &:nth-child(5):before {
+            content: '\f0ac';
+          }
+
+          &:nth-child(6):before {
+            content: '\f145';
+          }
+
+          &:after {
+            font-family: 'FontAwesome';
+            content: '\f105';
+            float: right;
+            margin-right: 50px;
+            font-weight: 200;
+          }
+        }
+      }
+    }
   }
 
   main {
@@ -105,12 +271,28 @@
     margin-bottom: 50px;
   }
 
-  h5 {
+  ul {
     text-transform: uppercase;
     margin-top: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
 
     &:nth-child(3) {
       color: $green;
+    }
+
+    li {
+      display: inline-block;
+      margin-left: 15px;
+
+      &.dot:after {
+        font-family: 'FontAwesome';
+        content: '\f111';
+        font-size: 0.4rem;
+        vertical-align: middle;
+        margin-left: 15px;
+        color: $silver;
+      }
     }
   }
 
@@ -204,25 +386,6 @@
           }
         }
       }
-
-      button {
-        text-transform: uppercase;
-        border-radius: 999px;
-        background: $green;
-        color: $white;
-        text-align: center;
-        padding: 15px 50px;
-        font-size: 0.9em;
-        font-weight: 600;
-        width: 100%;
-        margin-top: 20px;
-
-        &:hover {
-          opacity: 0.8;
-          transition: 0.2s ease-in-out;
-          cursor: pointer;
-        }
-      }
     }
   }
 
@@ -230,5 +393,6 @@
     text-align: center;
     margin-top: 20px;
     color: $white;
+    font-size: 0.7rem;
   }
 }

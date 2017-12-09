@@ -16,6 +16,14 @@ var _react = __webpack_require__(10);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Carousel = __webpack_require__(106);
+
+var _Carousel2 = _interopRequireDefault(_Carousel);
+
+var _carouselSlidesData = __webpack_require__(107);
+
+var _carouselSlidesData2 = _interopRequireDefault(_carouselSlidesData);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -34,9 +42,13 @@ var Hero = function (_Component) {
   }
 
   _createClass(Hero, [{
-    key: "render",
+    key: 'render',
     value: function render() {
-      return _react2.default.createElement("section", { className: "hero" });
+      return _react2.default.createElement(
+        'section',
+        { className: 'hero' },
+        _react2.default.createElement(_Carousel2.default, { slides: _carouselSlidesData2.default })
+      );
     }
   }]);
 
@@ -97,14 +109,57 @@ var Media = function (_Component) {
             "everywhere."
           ),
           _react2.default.createElement(
-            "h5",
+            "ul",
             null,
-            "mobile * computer * tablet * car"
+            _react2.default.createElement(
+              "li",
+              { className: "dot" },
+              "mobile"
+            ),
+            _react2.default.createElement(
+              "li",
+              { className: "dot" },
+              "computer"
+            ),
+            _react2.default.createElement(
+              "li",
+              { className: "dot" },
+              "tablet"
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              "car"
+            )
           ),
           _react2.default.createElement(
-            "h5",
+            "ul",
             null,
-            "speaker * playstation * xbox * tv * web player"
+            _react2.default.createElement(
+              "li",
+              { className: "dot" },
+              "speaker"
+            ),
+            _react2.default.createElement(
+              "li",
+              { className: "dot" },
+              "playstation"
+            ),
+            _react2.default.createElement(
+              "li",
+              { className: "dot" },
+              "xbox"
+            ),
+            _react2.default.createElement(
+              "li",
+              { className: "dot" },
+              "tv"
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              "web player"
+            )
           )
         ),
         _react2.default.createElement(
@@ -522,6 +577,168 @@ _reactDom2.default.render(_react2.default.createElement(App, null), app);
 
 /***/ }),
 
+/***/ 106:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(10);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Carousel = function (_Component) {
+  _inherits(Carousel, _Component);
+
+  function Carousel() {
+    _classCallCheck(this, Carousel);
+
+    var _this = _possibleConstructorReturn(this, (Carousel.__proto__ || Object.getPrototypeOf(Carousel)).call(this));
+
+    _this.goToPrevSlide = _this.goToPrevSlide.bind(_this);
+    _this.goToNextSlide = _this.goToNextSlide.bind(_this);
+
+    _this.state = {
+      activeIndex: 0
+    };
+    return _this;
+  }
+
+  _createClass(Carousel, [{
+    key: "goToPrevSlide",
+    value: function goToPrevSlide(e) {
+      //console.log('prev')
+      e.preventDefault();
+
+      var index = this.state.activeIndex;
+      var slides = this.props.slides;
+
+      var slidesLength = slides.length - 1;
+
+      // check if index < 1, if so, set to last slide
+      index < 1 ? index = slidesLength : --index;
+
+      this.setState({
+        activeIndex: index
+      });
+    }
+  }, {
+    key: "goToNextSlide",
+    value: function goToNextSlide(e) {
+      //console.log('next')
+      e.preventDefault();
+
+      var index = this.state.activeIndex;
+      var slides = this.props.slides;
+
+      var slidesLength = slides.length - 1;
+
+      index === slidesLength ? index = 0 : ++index;
+
+      this.setState({
+        activeIndex: index
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        "div",
+        { className: "wrapper" },
+        _react2.default.createElement(
+          "a",
+          { href: "#", onClick: function onClick(e) {
+              return _this2.goToPrevSlide(e);
+            } },
+          _react2.default.createElement("span", { className: "prev" })
+        ),
+        _react2.default.createElement(
+          "ul",
+          { className: "carousel" },
+          this.props.slides.map(function (slide, index) {
+            return _react2.default.createElement(
+              "li",
+              { className: index == _this2.state.activeIndex ? "carousel-item active" : "carousel-item", key: index },
+              _react2.default.createElement(
+                "h1",
+                null,
+                slide.content
+              ),
+              _react2.default.createElement(
+                "button",
+                null,
+                "Learn More"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                slide.signup
+              )
+            );
+          })
+        ),
+        _react2.default.createElement(
+          "a",
+          { href: "#", onClick: function onClick(e) {
+              return _this2.goToNextSlide(e);
+            } },
+          _react2.default.createElement("span", { className: "next" })
+        )
+      );
+    }
+  }]);
+
+  return Carousel;
+}(_react.Component);
+
+exports.default = Carousel;
+
+/***/ }),
+
+/***/ 107:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// contains slide data for carousel as objects in array
+var carouselSlidesData = [{
+  content: "Premium for your whole family. Just $17.99.",
+  signup: ""
+}, {
+  content: "Students get 50% off Premium.",
+  signup: ""
+}, {
+  content: "Play Spotify on Playstation and on Xbox One.",
+  signup: ""
+}, {
+  content: "3 months of Premium for $0.99.",
+  signup: "Or sign up for our free service."
+}];
+
+exports.default = carouselSlidesData;
+
+/***/ }),
+
 /***/ 97:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -564,7 +781,74 @@ var Features = function (_Component) {
         _react2.default.createElement(
           "aside",
           null,
-          "Image goes here"
+          _react2.default.createElement(
+            "div",
+            { className: "music-player" },
+            _react2.default.createElement("div", { className: "small-circle" }),
+            _react2.default.createElement(
+              "h4",
+              null,
+              "Made for You"
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "music-images" },
+              _react2.default.createElement(
+                "figure",
+                null,
+                _react2.default.createElement("img", { src: "./img/your_daily_mix.jpg" }),
+                _react2.default.createElement(
+                  "figcaption",
+                  null,
+                  "Your Daily Mix"
+                )
+              ),
+              _react2.default.createElement(
+                "figure",
+                null,
+                _react2.default.createElement("img", { src: "./img/your_release_radar.jpg" }),
+                _react2.default.createElement(
+                  "figcaption",
+                  null,
+                  "Release Radar"
+                )
+              )
+            ),
+            _react2.default.createElement(
+              "ul",
+              null,
+              _react2.default.createElement(
+                "li",
+                null,
+                "Charts"
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                "New Releases"
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                "Videos"
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                "Podcasts"
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                "Discover"
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                "Concerts"
+              )
+            )
+          )
         ),
         _react2.default.createElement(
           "main",
@@ -623,7 +907,7 @@ exports.default = Features;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -641,22 +925,249 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Footer = function (_Component) {
-    _inherits(Footer, _Component);
+  _inherits(Footer, _Component);
 
-    function Footer() {
-        _classCallCheck(this, Footer);
+  function Footer() {
+    _classCallCheck(this, Footer);
 
-        return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+  }
+
+  _createClass(Footer, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "footer",
+        null,
+        _react2.default.createElement(
+          "div",
+          { className: "link-wrapper" },
+          _react2.default.createElement(
+            "div",
+            { className: "footer-brand" },
+            _react2.default.createElement("img", { src: "./img/logo-spotify.png", alt: "Spotify Logo" })
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "link-cols" },
+            _react2.default.createElement(
+              "ul",
+              null,
+              _react2.default.createElement(
+                "li",
+                null,
+                "Company"
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "About"
+                )
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "Jobs"
+                )
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "Press"
+                )
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "News"
+                )
+              )
+            ),
+            _react2.default.createElement(
+              "ul",
+              null,
+              _react2.default.createElement(
+                "li",
+                null,
+                "Communities"
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "For Artists"
+                )
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "Developers"
+                )
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "Brands"
+                )
+              )
+            ),
+            _react2.default.createElement(
+              "ul",
+              null,
+              _react2.default.createElement(
+                "li",
+                null,
+                "Useful links"
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "Help"
+                )
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "Gift"
+                )
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "Web Player"
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "social-icons" },
+            _react2.default.createElement(
+              "a",
+              { href: "#" },
+              _react2.default.createElement(
+                "span",
+                { className: "instagram circle" },
+                _react2.default.createElement("i", { "class": "fa fa-instagram", "aria-hidden": "true" })
+              )
+            ),
+            _react2.default.createElement(
+              "a",
+              { href: "#" },
+              _react2.default.createElement(
+                "span",
+                { className: "twitter circle" },
+                _react2.default.createElement("i", { "class": "fa fa-twitter", "aria-hidden": "true" })
+              )
+            ),
+            _react2.default.createElement(
+              "a",
+              { href: "#" },
+              _react2.default.createElement(
+                "span",
+                { className: "facebook circle" },
+                _react2.default.createElement("i", { "class": "fa fa-facebook", "aria-hidden": "true" })
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "copyright-wrapper" },
+          _react2.default.createElement(
+            "div",
+            { className: "other-links" },
+            _react2.default.createElement(
+              "ul",
+              null,
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "Legal"
+                )
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "Privacy"
+                )
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "Cookies"
+                )
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "About Ads"
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "copyrights" },
+            _react2.default.createElement(
+              "div",
+              { className: "australia" },
+              _react2.default.createElement(
+                "a",
+                { href: "#" },
+                "Australia"
+              ),
+              _react2.default.createElement("img", { src: "./img/au.svg" })
+            ),
+            "\xA9 2017 Spotify AB"
+          )
+        )
+      );
     }
+  }]);
 
-    _createClass(Footer, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement('footer', null);
-        }
-    }]);
-
-    return Footer;
+  return Footer;
 }(_react.Component);
 
 exports.default = Footer;

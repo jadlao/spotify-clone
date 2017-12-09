@@ -36,3 +36,32 @@ p {
   line-height: 1.8rem;
   font-weight: 500;
 }
+
+a {
+  text-decoration: none;
+  color: $white;
+
+  &:hover {
+    color: $green;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+button {
+  text-transform: uppercase;
+  border-radius: 999px;
+  background: $green;
+  color: $white;
+  text-align: center;
+  padding: 15px 50px;
+  font-size: 0.9em;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 20px;
+
+  &:hover {
+    opacity: 0.8;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+  }
+}

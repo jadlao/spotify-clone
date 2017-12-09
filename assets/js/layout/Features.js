@@ -5,7 +5,28 @@ export default class Features extends Component {
     return (
       <section className="features">
         <aside>
-          Image goes here
+          <div className="music-player">
+            <div className="small-circle"></div>
+            <h4>Made for You</h4>
+            <div className="music-images">
+              <figure>
+                <img src="./img/your_daily_mix.jpg" />
+                <figcaption>Your Daily Mix</figcaption>
+              </figure>
+              <figure>
+                <img src="./img/your_release_radar.jpg" />
+                <figcaption>Release Radar</figcaption>
+              </figure>
+            </div>
+            <ul>
+              <li>Charts</li>
+              <li>New Releases</li>
+              <li>Videos</li>
+              <li>Podcasts</li>
+              <li>Discover</li>
+              <li>Concerts</li>
+            </ul>
+          </div>
         </aside>
         <main>
           <h1>It's easy.</h1>

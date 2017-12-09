@@ -29,15 +29,29 @@ nav {
         padding: 20px 18px;
         color: $white;
         font-weight: 300;
+      }
+    }
+  }
+}
+// Tablet and phone
+@media screen and (max-width: 768px) {
+  nav {
+    background: black;
 
-        a {
-          text-decoration: none;
-          color: $white;
+    .navbar-brand img {
+      height: 30px;
+    }
 
-          &:hover {
-            color: $green;
-          }
-        }
+    ul {
+      li:first-child,
+      li:nth-child(2),
+      li:nth-child(3),
+      li:nth-child(4) {
+        display: none;
+      }
+
+      li {
+        margin-right: -20px;
       }
     }
   }
