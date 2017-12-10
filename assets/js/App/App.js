@@ -9,16 +9,32 @@ import Pricing from '../../js/layout/Pricing';
 import Footer from '../../js/layout/Footer';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      className: 'hidden'
+    }
+  }
+
+  handleScroll() {
+    console.log(document.documentElement.scrollTop);
+    console.log(this.state.className);
+    (document.documentElement.scrollTop > 500) ? (this.setState({ className: 'show' })) : ''
+  }
+
+  componentDidMount() {
+    window.onscroll = () => this.handleScroll()
+  }
 
   render() {
     return (
       <div className='container'>
         <Header />
         <Hero />
-        <New />
-        <Features />
-        <Media />
-        <Pricing />
+        <New className={this.state.className}/>
+        <Features className={this.state.className}/>
+        <Media className={this.state.className}/>
+        <Pricing className={this.state.className}/>
         <Footer />
       </div>)
   }

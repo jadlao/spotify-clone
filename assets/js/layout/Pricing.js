@@ -4,9 +4,9 @@ export default class Pricing extends Component {
   render() {
     return (
       <section className="pricing">
-        <h1>Go get the music.</h1>
+        <h1 className={this.props.className}>Go get the music.</h1>
         <div className="card-wrapper">
-          <div className="card">
+          <div className={`card ${this.props.className}`}>
             <h3>Spotify Free</h3>
             <h2><span>$0.00</span><span> / month</span></h2>
             <ul>
@@ -19,7 +19,7 @@ export default class Pricing extends Component {
             </ul>
             <button>Get Free</button>
           </div>
-          <div className="card">
+          <div className={`card ${this.props.className}`}>
             <h3>Spotify Premium</h3>
             <h2><span>$0.99</span><span> / 3 months</span></h2>
             <ul>
@@ -33,7 +33,7 @@ export default class Pricing extends Component {
             <button>Get Premium</button>
           </div>
         </div>
-        <p>Offer not available to users who already tried Premium. <u>Terms apply.</u></p>
+        <p className={this.props.className}>Offer not available to users who already tried Premium. <u>Terms apply.</u></p>
       </section>
     );
   }

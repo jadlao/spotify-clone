@@ -4,9 +4,6 @@ export default class Carousel extends Component {
   constructor() {
     super();
 
-    this.goToPrevSlide = this.goToPrevSlide.bind(this);
-    this.goToNextSlide = this.goToNextSlide.bind(this);
-
     this.state = {
       activeIndex: 0
     };

@@ -103,69 +103,73 @@ var Media = function (_Component) {
           null,
           _react2.default.createElement(
             "h1",
-            null,
+            { className: this.props.className },
             "One account. Listen ",
             _react2.default.createElement("br", null),
             "everywhere."
           ),
           _react2.default.createElement(
-            "ul",
-            null,
+            "div",
+            { className: "media-list " + this.props.className },
             _react2.default.createElement(
-              "li",
-              { className: "dot" },
-              "mobile"
-            ),
-            _react2.default.createElement(
-              "li",
-              { className: "dot" },
-              "computer"
-            ),
-            _react2.default.createElement(
-              "li",
-              { className: "dot" },
-              "tablet"
-            ),
-            _react2.default.createElement(
-              "li",
+              "ul",
               null,
-              "car"
-            )
-          ),
-          _react2.default.createElement(
-            "ul",
-            null,
-            _react2.default.createElement(
-              "li",
-              { className: "dot" },
-              "speaker"
+              _react2.default.createElement(
+                "li",
+                { className: "dot" },
+                "mobile"
+              ),
+              _react2.default.createElement(
+                "li",
+                { className: "dot" },
+                "computer"
+              ),
+              _react2.default.createElement(
+                "li",
+                { className: "dot" },
+                "tablet"
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                "car"
+              )
             ),
             _react2.default.createElement(
-              "li",
-              { className: "dot" },
-              "playstation"
-            ),
-            _react2.default.createElement(
-              "li",
-              { className: "dot" },
-              "xbox"
-            ),
-            _react2.default.createElement(
-              "li",
-              { className: "dot" },
-              "tv"
-            ),
-            _react2.default.createElement(
-              "li",
+              "ul",
               null,
-              "web player"
+              _react2.default.createElement(
+                "li",
+                { className: "dot" },
+                "speaker"
+              ),
+              _react2.default.createElement(
+                "li",
+                { className: "dot" },
+                "playstation"
+              ),
+              _react2.default.createElement(
+                "li",
+                { className: "dot" },
+                "xbox"
+              ),
+              _react2.default.createElement(
+                "li",
+                { className: "dot" },
+                "tv"
+              ),
+              _react2.default.createElement(
+                "li",
+                null,
+                "web player"
+              )
             )
           )
         ),
         _react2.default.createElement(
           "aside",
           null,
-          _react2.default.createElement("img", { src: "./img/devices.svg" })
+          _react2.default.createElement("img", { src: "./img/devices.svg", className: this.props.className })
         )
       );
     }
@@ -222,40 +226,52 @@ var New = function (_Component) {
           null,
           _react2.default.createElement(
             "h1",
-            null,
+            { className: this.props.className },
             "Whats on ",
             _react2.default.createElement("br", null),
             "Spotify?"
           ),
           _react2.default.createElement(
-            "h3",
-            null,
-            "Music"
+            "span",
+            { className: this.props.className },
+            _react2.default.createElement(
+              "h3",
+              null,
+              "Music"
+            ),
+            _react2.default.createElement(
+              "p",
+              null,
+              "There are millions of songs on Spotify. Play your favorites, discover new tracks, and build the perfect collection."
+            )
           ),
           _react2.default.createElement(
-            "p",
-            null,
-            "There are millions of songs on Spotify. Play your favorites, discover new tracks, and build the perfect collection."
+            "span",
+            { className: this.props.className },
+            _react2.default.createElement(
+              "h3",
+              null,
+              "Playlists"
+            ),
+            _react2.default.createElement(
+              "p",
+              null,
+              "You\u2019ll find readymade playlists to match your mood, put together by music fans and experts."
+            )
           ),
           _react2.default.createElement(
-            "h3",
-            null,
-            "Playlists"
-          ),
-          _react2.default.createElement(
-            "p",
-            null,
-            "You\u2019ll find readymade playlists to match your mood, put together by music fans and experts."
-          ),
-          _react2.default.createElement(
-            "h3",
-            null,
-            "New Releases"
-          ),
-          _react2.default.createElement(
-            "p",
-            null,
-            "Hear this week\u2019s latest singles and albums, and check out what\u2019s hot in the Top 50."
+            "span",
+            { className: this.props.className },
+            _react2.default.createElement(
+              "h3",
+              null,
+              "New Releases"
+            ),
+            _react2.default.createElement(
+              "p",
+              null,
+              "Hear this week\u2019s latest singles and albums, and check out what\u2019s hot in the Top 50."
+            )
           )
         ),
         _react2.default.createElement(
@@ -263,7 +279,7 @@ var New = function (_Component) {
           null,
           _react2.default.createElement(
             "div",
-            { className: "box" },
+            { className: "box " + this.props.className },
             _react2.default.createElement(
               "div",
               { className: "music-cover" },
@@ -338,7 +354,7 @@ var Pricing = function (_Component) {
         { className: "pricing" },
         _react2.default.createElement(
           "h1",
-          null,
+          { className: this.props.className },
           "Go get the music."
         ),
         _react2.default.createElement(
@@ -346,7 +362,7 @@ var Pricing = function (_Component) {
           { className: "card-wrapper" },
           _react2.default.createElement(
             "div",
-            { className: "card" },
+            { className: "card " + this.props.className },
             _react2.default.createElement(
               "h3",
               null,
@@ -408,7 +424,7 @@ var Pricing = function (_Component) {
           ),
           _react2.default.createElement(
             "div",
-            { className: "card" },
+            { className: "card " + this.props.className },
             _react2.default.createElement(
               "h3",
               null,
@@ -471,7 +487,7 @@ var Pricing = function (_Component) {
         ),
         _react2.default.createElement(
           "p",
-          null,
+          { className: this.props.className },
           "Offer not available to users who already tried Premium. ",
           _react2.default.createElement(
             "u",
@@ -548,10 +564,31 @@ var App = function (_Component) {
   function App() {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+
+    _this.state = {
+      className: 'hidden'
+    };
+    return _this;
   }
 
   _createClass(App, [{
+    key: 'handleScroll',
+    value: function handleScroll() {
+      console.log(document.documentElement.scrollTop);
+      console.log(this.state.className);
+      document.documentElement.scrollTop > 500 ? this.setState({ className: 'show' }) : '';
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      window.onscroll = function () {
+        return _this2.handleScroll();
+      };
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -559,10 +596,10 @@ var App = function (_Component) {
         { className: 'container' },
         _react2.default.createElement(_Header2.default, null),
         _react2.default.createElement(_Hero2.default, null),
-        _react2.default.createElement(_New2.default, null),
-        _react2.default.createElement(_Features2.default, null),
-        _react2.default.createElement(_Media2.default, null),
-        _react2.default.createElement(_Pricing2.default, null),
+        _react2.default.createElement(_New2.default, { className: this.state.className }),
+        _react2.default.createElement(_Features2.default, { className: this.state.className }),
+        _react2.default.createElement(_Media2.default, { className: this.state.className }),
+        _react2.default.createElement(_Pricing2.default, { className: this.state.className }),
         _react2.default.createElement(_Footer2.default, null)
       );
     }
@@ -608,9 +645,6 @@ var Carousel = function (_Component) {
     _classCallCheck(this, Carousel);
 
     var _this = _possibleConstructorReturn(this, (Carousel.__proto__ || Object.getPrototypeOf(Carousel)).call(this));
-
-    _this.goToPrevSlide = _this.goToPrevSlide.bind(_this);
-    _this.goToNextSlide = _this.goToNextSlide.bind(_this);
 
     _this.state = {
       activeIndex: 0
@@ -783,7 +817,7 @@ var Features = function (_Component) {
           null,
           _react2.default.createElement(
             "div",
-            { className: "music-player" },
+            { className: "music-player " + this.props.className },
             _react2.default.createElement("div", { className: "small-circle" }),
             _react2.default.createElement(
               "h4",
@@ -855,38 +889,50 @@ var Features = function (_Component) {
           null,
           _react2.default.createElement(
             "h1",
-            null,
+            { className: this.props.className },
             "It's easy."
           ),
           _react2.default.createElement(
-            "h3",
-            null,
-            "Search"
+            "span",
+            { className: this.props.className },
+            _react2.default.createElement(
+              "h3",
+              null,
+              "Search"
+            ),
+            _react2.default.createElement(
+              "p",
+              null,
+              "Know what you want to listen to? Just search and hit play."
+            )
           ),
           _react2.default.createElement(
-            "p",
-            null,
-            "Know what you want to listen to? Just search and hit play."
+            "span",
+            { className: this.props.className },
+            _react2.default.createElement(
+              "h3",
+              null,
+              "Browse"
+            ),
+            _react2.default.createElement(
+              "p",
+              null,
+              "Check out the latest charts, brand new releases and great playlists for right now."
+            )
           ),
           _react2.default.createElement(
-            "h3",
-            null,
-            "Browse"
-          ),
-          _react2.default.createElement(
-            "p",
-            null,
-            "Check out the latest charts, brand new releases and great playlists for right now."
-          ),
-          _react2.default.createElement(
-            "h3",
-            null,
-            "Discover"
-          ),
-          _react2.default.createElement(
-            "p",
-            null,
-            "Enjoy new music every Monday with your own personal playlist. Or sit back and enjoy Radio."
+            "span",
+            { className: this.props.className },
+            _react2.default.createElement(
+              "h3",
+              null,
+              "Discover"
+            ),
+            _react2.default.createElement(
+              "p",
+              null,
+              "Enjoy new music every Monday with your own personal playlist. Or sit back and enjoy Radio."
+            )
           )
         )
       );
