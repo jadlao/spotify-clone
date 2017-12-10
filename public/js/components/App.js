@@ -297,7 +297,7 @@ var New = function (_Component) {
             ),
             _react2.default.createElement(
               "div",
-              { className: "music-cover" },
+              { className: "music-cover", id: "last-img" },
               _react2.default.createElement("img", { src: "./img/cover4.jpeg" })
             )
           )
@@ -576,7 +576,7 @@ var App = function (_Component) {
     key: 'handleScroll',
     value: function handleScroll() {
       console.log(document.documentElement.scrollTop);
-      console.log(this.state.className);
+      //console.log(this.state.className);
       document.documentElement.scrollTop > 500 ? this.setState({ className: 'show' }) : '';
     }
   }, {

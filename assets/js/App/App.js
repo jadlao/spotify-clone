@@ -18,12 +18,12 @@ class App extends Component {
 
   handleScroll() {
     console.log(document.documentElement.scrollTop);
-    console.log(this.state.className);
+    //console.log(this.state.className);
     (document.documentElement.scrollTop > 500) ? (this.setState({ className: 'show' })) : ''
   }
 
   componentDidMount() {
-    window.onscroll = () => this.handleScroll()
+    window.onscroll = () => this.handleScroll();
   }
 
   render() {

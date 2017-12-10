@@ -1,0 +1,183 @@
+// What's new section media queries
+@media screen and (max-width: $laptopMaxWidth) {
+  .new {
+    height: 750px;
+
+    main {
+      width: 60%;
+    }
+
+    aside {
+      width: 40%;
+
+      .box {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        height: 660px;
+        width: 225px;
+        margin-top: -60px;
+
+        #last-img {
+          visibility: hidden;
+        }
+
+        .music-cover {
+          img {
+            height: 225px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $tabletMaxWidth) {
+  .new {
+    background: yellow;
+    position: relative;
+    height: 1200px;
+
+    main {
+      width: 100%;
+      display: block;
+    }
+
+    aside {
+      width: 100%;
+      height: 55%;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      .box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        #last-img {
+          visibility: visible;
+        }
+
+        .music-cover {
+          height: 50vw;
+          width: 50vw;
+
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+// Features section media queries
+@media screen and (max-width: $laptopMaxWidth) {
+  .features {
+    aside {
+      width: 30%;
+
+      .music-player {
+        margin-left: -80px;
+      }
+    }
+
+    main {
+      width: 40%;
+      padding: 50px 20px;
+
+      p {
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: $tabletMaxWidth) {
+  .features {
+    background: green;
+    height: 470px;
+
+    aside {
+      display: none;
+    }
+
+    main {
+      width: 90%;
+      display: block;
+      padding: 10px;
+      margin-top: 20px;
+
+      p {
+        width: 100%;
+      }
+    }
+  }
+}
+// Media section media queries
+@media screen and (max-width: $laptopMaxWidth) {
+  .media {
+    background: red;
+
+    main {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: -50px;
+    }
+
+    aside {
+      position: static;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 50px;
+    }
+  }
+}
+@media screen and (max-width: $tabletMaxWidth) {
+  .media {
+    background: purple;
+    height: 650px;
+
+    aside {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+// Pricing section media queries
+@media screen and (max-width: $laptopMaxWidth) {
+  .pricing {
+    .card-wrapper {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+
+      .card {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+@media screen and (max-width: $tabletMaxWidth) {
+  .pricing {
+    height: 1300px;
+
+    .card-wrapper {
+      width: 90%;
+      display: block;
+      margin-left: 10px;
+
+      .card {
+        width: 100%;
+      }
+    }
+  }
+}

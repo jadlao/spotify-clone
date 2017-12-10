@@ -34,7 +34,7 @@ nav {
   }
 }
 // Tablet and phone
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $tabletMaxWidth) {
   nav {
     background: black;
 

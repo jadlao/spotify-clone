@@ -41,7 +41,7 @@ export default class New extends Component {
               <div className="music-cover">
                 <img src="./img/cover3.jpeg" />
               </div>
-              <div className="music-cover">
+              <div className="music-cover" id="last-img">
                 <img src="./img/cover4.jpeg" />
               </div>
           </div>

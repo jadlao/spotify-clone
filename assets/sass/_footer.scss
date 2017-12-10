@@ -7,11 +7,11 @@ footer {
   box-sizing: border-box;
   position: relative;
   display: grid;
-  grid-template-rows: 220px 55px;
+  grid-template-rows: 220px auto;
 
   .link-wrapper {
     display: grid;
-    grid-template-columns: 133px 550px 100px;
+    grid-template-columns: 133px 550px auto;
 
     .footer-brand {
       img {
@@ -49,6 +49,7 @@ footer {
       width: 250px;
       float: right;
       margin-top: 20px;
+      display: block;
 
       .circle {
         border-radius: 50%;
@@ -126,6 +127,63 @@ footer {
           height: 15px;
           margin-left: 10px;
         }
+      }
+    }
+  }
+}
+@media screen and (max-width: $laptopMaxWidth) {
+  footer {
+    height: 600px;
+
+    .link-wrapper {
+      display: grid;
+      grid-template-columns: auto;
+
+      .link-cols {
+        width: 640px;
+
+        ul {
+          margin-right: 40px;
+        }
+      }
+    }
+
+    .copyright-wrapper {
+      margin-top: 200px;
+      margin-left: 20px;
+
+      .australia {
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+@media screen and (max-width: $tabletMaxWidth) {
+  footer {
+    height: 720px;
+    padding: 20px;
+
+    .link-wrapper {
+      display: grid;
+      grid-template-columns: 100%;
+
+      .link-cols {
+        width: 400px;
+
+        ul {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .copyright-wrapper {
+      margin-top: 400px;
+      margin-left: 20px;
+      font-size: 0.6rem;
+      grid-template-columns: 70% 30%;
+
+      .australia {
+        box-sizing: border-box;
       }
     }
   }

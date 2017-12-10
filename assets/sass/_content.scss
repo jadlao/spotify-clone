@@ -343,6 +343,7 @@
 
     img {
       display: none;
+      height: 168px;
 
       &.show {
         @extend .show-element;
