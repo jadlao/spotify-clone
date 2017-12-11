@@ -1,3 +1,122 @@
+// Hero section media queries
+@media screen and (max-width: $laptopMaxWidth) {
+  .hero {
+    .wrapper {
+      position: absolute;
+      top: -70px;
+
+      .prev:before {
+        font-family: 'FontAwesome';
+        content: '\f104';
+        font-size: 4rem;
+        position: absolute;
+        left: 30px;
+        top: 50px;
+      }
+
+      .next:before {
+        font-family: 'FontAwesome';
+        content: '\f105';
+        font-size: 4rem;
+        position: absolute;
+        right: 30px;
+        top: 50px;
+      }
+
+      .carousel {
+        h1,
+        p {
+          transform: scale(0.8, 0.8);
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $tabletMaxWidth) {
+  .hero {
+    .wrapper {
+      position: absolute;
+      top: -100px;
+
+      .prev:before {
+        font-family: 'FontAwesome';
+        content: '\f104';
+        font-size: 3rem;
+        position: absolute;
+        left: 20px;
+        top: 100px;
+      }
+
+      .next:before {
+        font-family: 'FontAwesome';
+        content: '\f105';
+        font-size: 3rem;
+        position: absolute;
+        right: 20px;
+        top: 100px;
+      }
+
+      .carousel {
+        h1 {
+          transform: scale(0.6, 0.6);
+        }
+
+        p {
+          transform: scale(0.8, 0.8);
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $mobileMaxWidth) {
+  .hero {
+    .wrapper {
+      width: 100vw;
+
+      span {
+        .prev:before {
+          font-family: 'FontAwesome';
+          content: '\f104';
+          font-size: 3rem;
+          position: absolute;
+          left: 100px;
+          top: 100px;
+        }
+
+        .next:before {
+          font-family: 'FontAwesome';
+          content: '\f105';
+          font-size: 3rem;
+          position: absolute;
+          right: 100px;
+          top: 100px;
+        }
+      }
+
+      .carousel {
+        margin-top: -80px;
+
+        h1 {
+          transform: scale(0.4, 0.4);
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
+        p {
+          transform: scale(0.7, 0.7);
+        }
+
+        .carousel-item {
+          button {
+            margin-top: -500px;
+            margin-left: -25px;
+          }
+        }
+      }
+    }
+  }
+}
 // What's new section media queries
 @media screen and (max-width: $laptopMaxWidth) {
   .new {
@@ -33,9 +152,8 @@
 }
 @media screen and (max-width: $tabletMaxWidth) {
   .new {
-    background: yellow;
     position: relative;
-    height: 1200px;
+    height: 1000px;
 
     main {
       width: 100%;
@@ -45,31 +163,53 @@
     aside {
       width: 100%;
       height: 55%;
-      display: block;
       position: absolute;
-      bottom: 0;
+      bottom: -70px;
       left: 0;
 
       .box {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        grid-gap: 0;
-        position: absolute;
-        bottom: 0;
-        left: 0;
+        height: 400px;
+        width: 400px;
+        left: 22%;
 
         #last-img {
           visibility: visible;
         }
 
         .music-cover {
-          height: 50vw;
-          width: 50vw;
+          height: 200px;
+          width: 200px;
 
           img {
-            height: 100%;
-            width: 100%;
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $mobileMaxWidth) {
+  .new {
+    height: 1100px;
+
+    aside {
+      .box {
+        height: 320px;
+        width: 320px;
+        display: block;
+        margin: 0 auto;
+        left: 0;
+        margin-top: 50px;
+
+        .music-cover {
+          height: 160px;
+          width: 160px;
+
+          img {
+            height: 160px;
           }
         }
       }
@@ -99,8 +239,7 @@
 }
 @media screen and (max-width: $tabletMaxWidth) {
   .features {
-    background: green;
-    height: 470px;
+    height: 550px;
 
     aside {
       display: none;
@@ -121,8 +260,6 @@
 // Media section media queries
 @media screen and (max-width: $laptopMaxWidth) {
   .media {
-    background: red;
-
     main {
       display: block;
       width: 100%;
@@ -141,8 +278,13 @@
 }
 @media screen and (max-width: $tabletMaxWidth) {
   .media {
-    background: purple;
     height: 650px;
+
+    main {
+      h1 {
+        font-size: 2rem;
+      }
+    }
 
     aside {
       img {
@@ -174,6 +316,21 @@
       width: 90%;
       display: block;
       margin-left: 10px;
+
+      .card {
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: $mobileMaxWidth) {
+  .pricing {
+    height: 1350px;
+
+    .card-wrapper {
+      width: 90%;
+      display: block;
+      margin-left: 0;
 
       .card {
         width: 100%;

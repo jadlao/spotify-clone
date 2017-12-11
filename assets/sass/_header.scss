@@ -42,16 +42,19 @@ nav {
       height: 30px;
     }
 
-    ul {
-      li:first-child,
-      li:nth-child(2),
-      li:nth-child(3),
-      li:nth-child(4) {
-        display: none;
-      }
+    .nav-menu {
+      ul {
+        li:first-child,
+        li:nth-child(2),
+        li:nth-child(3),
+        li:nth-child(4) {
+          display: none;
+        }
 
-      li {
-        margin-right: -20px;
+        li {
+          margin-right: -20px;
+          font-size: 0.8rem;
+        }
       }
     }
   }
