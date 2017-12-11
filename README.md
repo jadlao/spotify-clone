@@ -1,7 +1,7 @@
 # Spotify Clone (frontend)
 
-Clone of Spotify home page.
+Clone of Spotify home page. The page was made responsive and contains some CSS3 animations using React.
 
 Stack: React, SASS.
 
-Demo: 
+Demo: https://jadlao-spotify.surge.sh/
