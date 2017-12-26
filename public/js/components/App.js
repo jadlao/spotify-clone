@@ -488,7 +488,8 @@ var Pricing = function (_Component) {
         _react2.default.createElement(
           "p",
           { className: this.props.className },
-          "Offer not available to users who already tried Premium. ",
+          "Offer not available to users who already tried Premium.",
+          ' ',
           _react2.default.createElement(
             "u",
             null,
@@ -567,17 +568,25 @@ var App = function (_Component) {
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
 
     _this.state = {
-      className: 'hidden'
+      showNew: 'hidden',
+      showFeatures: 'hidden',
+      showMedia: 'hidden',
+      showPricing: 'hidden'
     };
+    _this.handleScroll = _this.handleScroll.bind(_this);
     return _this;
   }
 
   _createClass(App, [{
     key: 'handleScroll',
     value: function handleScroll() {
-      console.log(document.documentElement.scrollTop);
+      //console.log(document.documentElement.scrollTop);
       //console.log(this.state.className);
-      document.documentElement.scrollTop > 500 ? this.setState({ className: 'show' }) : '';
+      var scrollPosition = document.documentElement.scrollTop;
+      scrollPosition > 200 ? this.setState({ showNew: 'show' }) : '';
+      scrollPosition > 700 ? this.setState({ showFeatures: 'show' }) : '';
+      scrollPosition > 1400 ? this.setState({ showMedia: 'show' }) : '';
+      scrollPosition > 1900 ? this.setState({ showPricing: 'show' }) : '';
     }
   }, {
     key: 'componentDidMount',
@@ -596,10 +605,10 @@ var App = function (_Component) {
         { className: 'container' },
         _react2.default.createElement(_Header2.default, null),
         _react2.default.createElement(_Hero2.default, null),
-        _react2.default.createElement(_New2.default, { className: this.state.className }),
-        _react2.default.createElement(_Features2.default, { className: this.state.className }),
-        _react2.default.createElement(_Media2.default, { className: this.state.className }),
-        _react2.default.createElement(_Pricing2.default, { className: this.state.className }),
+        _react2.default.createElement(_New2.default, { className: this.state.showNew }),
+        _react2.default.createElement(_Features2.default, { className: this.state.showFeatures }),
+        _react2.default.createElement(_Media2.default, { className: this.state.showMedia }),
+        _react2.default.createElement(_Pricing2.default, { className: this.state.showPricing }),
         _react2.default.createElement(_Footer2.default, null)
       );
     }

@@ -12,14 +12,22 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      className: 'hidden'
-    }
+      showNew: 'hidden',
+      showFeatures: 'hidden',
+      showMedia: 'hidden',
+      showPricing: 'hidden'
+    };
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   handleScroll() {
-    console.log(document.documentElement.scrollTop);
+    //console.log(document.documentElement.scrollTop);
     //console.log(this.state.className);
-    (document.documentElement.scrollTop > 500) ? (this.setState({ className: 'show' })) : ''
+    var scrollPosition = document.documentElement.scrollTop;
+    scrollPosition > 200 ? this.setState({ showNew: 'show' }) : '';
+    scrollPosition > 700 ? this.setState({ showFeatures: 'show' }) : '';
+    scrollPosition > 1400 ? this.setState({ showMedia: 'show' }) : '';
+    scrollPosition > 1900 ? this.setState({ showPricing: 'show' }) : '';
   }
 
   componentDidMount() {
@@ -28,18 +36,19 @@ class App extends Component {
 
   render() {
     return (
-      <div className='container'>
+      <div className="container">
         <Header />
         <Hero />
-        <New className={this.state.className}/>
-        <Features className={this.state.className}/>
-        <Media className={this.state.className}/>
-        <Pricing className={this.state.className}/>
+        <New className={this.state.showNew} />
+        <Features className={this.state.showFeatures} />
+        <Media className={this.state.showMedia} />
+        <Pricing className={this.state.showPricing} />
         <Footer />
-      </div>)
+      </div>
+    );
   }
 }
 
-const app = document.getElementById('app')
+const app = document.getElementById('app');
 
-ReactDOM.render(<App />, app)
+ReactDOM.render(<App />, app);

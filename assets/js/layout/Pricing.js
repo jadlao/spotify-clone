@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class Pricing extends Component {
   render() {
@@ -8,7 +8,10 @@ export default class Pricing extends Component {
         <div className="card-wrapper">
           <div className={`card ${this.props.className}`}>
             <h3>Spotify Free</h3>
-            <h2><span>$0.00</span><span> / month</span></h2>
+            <h2>
+              <span>$0.00</span>
+              <span> / month</span>
+            </h2>
             <ul>
               <li>Shuffle play</li>
               <li className="inactive">Ad free</li>
@@ -21,7 +24,10 @@ export default class Pricing extends Component {
           </div>
           <div className={`card ${this.props.className}`}>
             <h3>Spotify Premium</h3>
-            <h2><span>$0.99</span><span> / 3 months</span></h2>
+            <h2>
+              <span>$0.99</span>
+              <span> / 3 months</span>
+            </h2>
             <ul>
               <li>Shuffle play</li>
               <li>Ad free</li>
@@ -33,7 +39,10 @@ export default class Pricing extends Component {
             <button>Get Premium</button>
           </div>
         </div>
-        <p className={this.props.className}>Offer not available to users who already tried Premium. <u>Terms apply.</u></p>
+        <p className={this.props.className}>
+          Offer not available to users who already tried Premium.{' '}
+          <u>Terms apply.</u>
+        </p>
       </section>
     );
   }

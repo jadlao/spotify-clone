@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-@import "reset";
-@import "variables";
-@import "animations";
-@import "mixins";
-@import "header";
-@import "content";
-@import "footer";
-@import "content_media";
+@import 'reset';
+@import 'variables';
+@import 'animations';
+@import 'mixins';
+@import 'header';
+@import 'content';
+@import 'footer';
+@import 'content_media';
 
 body,
 html {
@@ -42,10 +42,10 @@ p {
 a {
   text-decoration: none;
   color: $white;
+  transition: 0.3s ease-in-out;
 
   &:hover {
     color: $green;
-    transition: 0.3s ease-in-out;
   }
 }
 
@@ -60,10 +60,9 @@ button {
   font-weight: 600;
   width: 100%;
   margin-top: 20px;
-
+  transition: 0.2s ease-in-out;
   &:hover {
     opacity: 0.8;
-    transition: 0.2s ease-in-out;
     cursor: pointer;
   }
 }
