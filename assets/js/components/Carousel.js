@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class Carousel extends Component {
   constructor() {
@@ -18,7 +18,7 @@ export default class Carousel extends Component {
     let slidesLength = slides.length - 1;
 
     // check if index < 1, if so, set to last slide
-    (index < 1) ? (index = slidesLength) : --index;
+    index < 1 ? (index = slidesLength) : --index;
 
     this.setState({
       activeIndex: index
@@ -33,7 +33,7 @@ export default class Carousel extends Component {
     let { slides } = this.props;
     let slidesLength = slides.length - 1;
 
-    (index === slidesLength) ? (index = 0) : ++index;
+    index === slidesLength ? (index = 0) : ++index;
 
     this.setState({
       activeIndex: index
@@ -43,22 +43,29 @@ export default class Carousel extends Component {
   render() {
     return (
       <div className="wrapper">
-        <a href="#" onClick={e => this.goToPrevSlide(e)}>
-          <span className="prev"></span>
+        <a onClick={e => this.goToPrevSlide(e)}>
+          <span className="prev" />
         </a>
         <ul className="carousel">
-          {this.props.slides.map((slide, index) =>
-          <li className={index == this.state.activeIndex ? "carousel-item active" : "carousel-item"} key={index} >
-            <h1>{ slide.content }</h1>
-            <button>Learn More</button>
-            <p>{ slide.signup }</p>
-          </li>
-        )}
+          {this.props.slides.map((slide, index) => (
+            <li
+              className={
+                index == this.state.activeIndex
+                  ? 'carousel-item active'
+                  : 'carousel-item'
+              }
+              key={index}
+            >
+              <h1>{slide.content}</h1>
+              <button>Learn More</button>
+              <p>{slide.signup}</p>
+            </li>
+          ))}
         </ul>
-        <a href="#" onClick={e => this.goToNextSlide(e)}>
-          <span className="next"></span>
+        <a onClick={e => this.goToNextSlide(e)}>
+          <span className="next" />
         </a>
       </div>
-    )
+    );
   }
 }

@@ -706,7 +706,7 @@ var Carousel = function (_Component) {
         { className: "wrapper" },
         _react2.default.createElement(
           "a",
-          { href: "#", onClick: function onClick(e) {
+          { onClick: function onClick(e) {
               return _this2.goToPrevSlide(e);
             } },
           _react2.default.createElement("span", { className: "prev" })
@@ -717,7 +717,10 @@ var Carousel = function (_Component) {
           this.props.slides.map(function (slide, index) {
             return _react2.default.createElement(
               "li",
-              { className: index == _this2.state.activeIndex ? "carousel-item active" : "carousel-item", key: index },
+              {
+                className: index == _this2.state.activeIndex ? 'carousel-item active' : 'carousel-item',
+                key: index
+              },
               _react2.default.createElement(
                 "h1",
                 null,
@@ -738,7 +741,7 @@ var Carousel = function (_Component) {
         ),
         _react2.default.createElement(
           "a",
-          { href: "#", onClick: function onClick(e) {
+          { onClick: function onClick(e) {
               return _this2.goToNextSlide(e);
             } },
           _react2.default.createElement("span", { className: "next" })

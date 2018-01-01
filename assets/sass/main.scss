@@ -61,8 +61,10 @@ button {
   width: 100%;
   margin-top: 20px;
   transition: 0.2s ease-in-out;
+  border: none;
   &:hover {
     opacity: 0.8;
     cursor: pointer;
+    transform: scale(1.05, 1.05);
   }
 }
